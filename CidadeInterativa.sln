@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ms-identity", "ci-microservices\ms-identity.njsproj", "{F16FA5EE-75BB-4369-A827-1437BB782045}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ms-feed", "ci-microservices\ms-feed.njsproj", "{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ci-ui", "ci-ui\ci-ui.njsproj", "{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F16FA5EE-75BB-4369-A827-1437BB782045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16FA5EE-75BB-4369-A827-1437BB782045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16FA5EE-75BB-4369-A827-1437BB782045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16FA5EE-75BB-4369-A827-1437BB782045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
