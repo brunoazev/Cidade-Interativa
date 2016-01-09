@@ -18,7 +18,7 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Compile Include="app.js" />
-    <Compile Include="public\javascripts\base.js" />
+    <Compile Include="public\javascripts\ci-core.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="public\index.html" />
