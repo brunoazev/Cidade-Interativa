@@ -1,3 +1,4 @@
+ciapp = [];
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,8 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/ci_db');
+Schema = mongoose.Schema;
 
-var db = mongoose.connection;
+db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log("database connected successfully");
@@ -15,6 +17,7 @@ db.once('open', function () {
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var feeds = require('./routes/feeds');
 
 var app = express();
 
@@ -32,8 +35,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/feeds', feeds);
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get('*', function (req, res) {
+    console.log("app static routing");
     res.send("serving feeds"); // load the single view file (angular will handle the page changes on the front-end)
 });
 

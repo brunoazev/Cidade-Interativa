@@ -6,8 +6,10 @@
     <title>Cidade Interativa</title>
 </head>
 <body>
-    <section ng-controller="feedCtrl as feed">
-        <h3>{{ feed.teste }}</h3>
+    <section ng-controller="feedCtrl as feeds">
+        <div ng-repeat="feed in feeds.items">
+            <h4>{{feed.title}}</h4>
+        </div>        
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
     <script src="javascripts/ci-core.js"></script>
