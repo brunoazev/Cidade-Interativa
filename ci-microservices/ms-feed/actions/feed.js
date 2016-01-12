@@ -7,8 +7,7 @@ module.exports = {
              if (err) {
                 console.log(err);
                 return res(err);
-            } else {
-                console.log(data);
+            } else {                
                 return res.json(data);
             }
         });
