@@ -13,9 +13,24 @@ var cookieParser = require('cookie-parser');
 var http = require('http');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-
 var app = express();
 
+var allowCrossDomain = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+        res.send(200);
+    }
+    else {
+        next();
+    }
+};
+
+
+app.use(allowCrossDomain);
 //LOG REQUEST TO THE CONSOLE
 // =============================================================================
 app.use(morgan('dev'));
@@ -54,37 +69,6 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/feeds', feeds);
 
-app.all('*', function (req, res, next) {
-    
-    
-    /**
-     * Response settings
-     * @type {Object}
-     */
-    var responseSettings = {
-        "AccessControlAllowOrigin": req.headers.origin,
-        "AccessControlAllowHeaders": "Content-Type,X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5,  Date, X-Api-Version, X-File-Name",
-        "AccessControlAllowMethods": "POST, GET, PUT, DELETE, OPTIONS",
-        "AccessControlAllowCredentials": true
-    };
-    
-    /**
-     * Headers
-     */
-    res.header("Access-Control-Allow-Credentials", responseSettings.AccessControlAllowCredentials);
-    res.header("Access-Control-Allow-Origin", responseSettings.AccessControlAllowOrigin);
-    res.header("Access-Control-Allow-Headers", (req.headers['access-control-request-headers']) ? req.headers['access-control-request-headers'] : "x-requested-with");
-    res.header("Access-Control-Allow-Methods", (req.headers['access-control-request-method']) ? req.headers['access-control-request-method'] : responseSettings.AccessControlAllowMethods);
-    
-    if ('OPTIONS' == req.method) {
-        res.send(200);
-    }
-    else {
-        next();
-    }
-
-
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
