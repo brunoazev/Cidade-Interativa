@@ -5,14 +5,38 @@
     <meta charset="utf-8" />
     <title>Cidade Interativa</title>
 </head>
-<body>
-    <section ng-controller="feedCtrl as feeds">
-        <div ng-repeat="feed in feeds.items">
-            <h4>{{feed.title}}</h4>
-            <a target="_blank" ng-href="https://maps.google.fr/maps?saddr={{feed.location.coords.lat}},{{feed.location.coords.long}}">
-            {{feed.location.street}}
-            </a>
-            <p>{{feed.text}}</p>
+<body ng-controller="userCtrl as user">
+    <section name="headerSec"></section>
+    <section name="feedsSec">
+        <div name="categoryDiv">
+            <div>Acessibilidade</div>
+            <div>Arrecadação</div>
+            <div>Cidadania</div>
+            <div>Educação</div>
+            <div>Lazer</div>
+            <div>Meio Ambiente</div>
+            <div>Mobilidade Urbana</div>
+        </div>
+        <div name="feedsDiv">
+            <form name="feedFrm" ng-controller="FeedCtrl as feedCtrl" ng-submit="feedCtrl.save(user)">
+                {{feedCtrl.feed.text}}
+                <textarea ng-model="feedCtrl.feed.text" class="form-control" placeholder="Escreva e interaja com a sua cidade..." title="Comentário"></textarea>
+                <textarea ng-model="feedCtrl.feed.title" class="form-control" placeholder="Título" title="Comentário"></textarea>
+                <select ng-model="feedCtrl.feed.category" class="form-control" ng-options="category for category in ['Acessibilidade','Meio Ambiente']" title="Categorias">
+                    <option value="">Escolha a categoria</option>
+                </select>
+                
+                <input type="submit" class="btn btn-primary pull-right" value="Enviar" />
+            </form>
+            <div ng-repeat="feed in user.feeds">
+                <h4>{{feed.title}}</h4>
+                {{ feed.date }}
+                <a target="_blank" ng-href="https://maps.google.fr/maps?saddr={{feed.location.coords.lat}},{{feed.location.coords.long}}">
+                    {{feed.location.street}}
+                </a>
+                <p>{{feed.text}}</p>
+                {{feed.liked}} pessoas curtiram, {{feed.shared}} compartilharam
+            </div>
         </div>
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>

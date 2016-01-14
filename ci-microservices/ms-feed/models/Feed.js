@@ -1,4 +1,4 @@
-﻿var collection = db.collection('feeds');
+﻿
 
 var feedSchema = new Schema({
     feed_id : Number,

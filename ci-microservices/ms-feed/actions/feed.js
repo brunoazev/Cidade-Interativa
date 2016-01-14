@@ -1,21 +1,22 @@
-﻿var Feed = require('../models/Feed');
+﻿var collection = db.get('feeds');
 
 module.exports = {
-    get: function (req, res) {
+    get: function (req, res) {        
         res.header("Access-Control-Allow-Origin", "*");          
-        Feed.getAll(function (err, data) { 
-             if (err) {
-                console.log(err);
-                return res(err);
+        
+        collection.find({}, function (err, result) {
+            if (err) {
+                res.send({ msg: err });
             } else {                
-                return res.json(data);
+                res.json(result);
             }
-        });
+        })
     },
     
-    put: function (req, res) {
+    put: function (req, res) {         
         console.log("inserting");
-        conn.collection('feeds').insert(new Feed(res.params.feed));
+        console.dir(req.param.id);
+        //collection.insert(req.);
     },
 
     delete: function (req, res) {
