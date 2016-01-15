@@ -7,7 +7,25 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ms-identity", "ci-microserv
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ms-feed", "ci-microservices\ms-feed.njsproj", "{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ci-ui", "ci-ui\ci-ui.njsproj", "{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ci-ui", "ci-ui\", "{15652DB5-6142-4535-ADB4-E9DD7F481745}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56256"
+		Debug.AspNetCompiler.PhysicalPath = "ci-ui\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56256\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56256"
+		Release.AspNetCompiler.PhysicalPath = "ci-ui\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56256\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56256"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +41,10 @@ Global
 		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8619A6CA-1213-4A6C-A717-CF72C68E0E8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EEDA6ED-20D3-42FC-B5D7-47495EFC41A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
