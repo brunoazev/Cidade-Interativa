@@ -22,6 +22,7 @@
             this.save = function (user) {
                 this.feed.liked = 0;
                 this.feed.shared = 0;
+                this.feed.public = true;
                 this.feed.date = new Date();
 
                 user.feeds.push(this.feed);                               

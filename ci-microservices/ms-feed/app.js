@@ -15,22 +15,30 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var app = express();
 
+//SERV CONFIG
+// =============================================================================
+var config = require('./_config.js');
+
+
+//ENABLE/DISABLE CORS
+// =============================================================================
+
 var allowCrossDomain = function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    res.header('Access-Control-Allow-Origin', config.responseSettings.AccessControlAllowOrigin);
+    res.header('Access-Control-Allow-Methods', config.responseSettings.AccessControlAllowMethods);
+    res.header('Access-Control-Allow-Headers', config.responseSettings.AccessControlAllowHeaders);
     
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
-        res.send(200);
+        res.sendStatus(200);
     }
     else {
         next();
     }
 };
 
-
 app.use(allowCrossDomain);
+
 //LOG REQUEST TO THE CONSOLE
 // =============================================================================
 app.use(morgan('dev'));
@@ -38,10 +46,6 @@ app.use(morgan('dev'));
 // CONFIGURE BODY PARSE
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-//SERV CONFIG
-// =============================================================================
-var config = require('./_config.js');
 
 //DATABASE CONECTION
 // =============================================================================
