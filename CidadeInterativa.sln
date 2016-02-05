@@ -28,25 +28,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ci-ui", "ci-ui\", "{15652DB
 		SlnRelativePath = "ci-ui\"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ci-admin-ui", "..\..\WebSites\ci-admin-ui\", "{413702AE-B5AF-4EF0-8C44-E78A8E7DC2BE}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ci-ui-admin", "ci-ui-admin\", "{948074A8-79F5-4D07-A9D3-292BD2B88D2A}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_1602"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\ci-admin-ui\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1602\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1679"
+		Debug.AspNetCompiler.PhysicalPath = "ci-ui-admin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1679\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_1602"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\ci-admin-ui\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1602\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1679"
+		Release.AspNetCompiler.PhysicalPath = "ci-ui-admin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1679\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1602"
-		SlnRelativePath = "..\..\WebSites\ci-admin-ui\"
+		VWDPort = "1679"
+		SlnRelativePath = "ci-ui-admin\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -68,10 +68,10 @@ Global
 		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{15652DB5-6142-4535-ADB4-E9DD7F481745}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{413702AE-B5AF-4EF0-8C44-E78A8E7DC2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{413702AE-B5AF-4EF0-8C44-E78A8E7DC2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{413702AE-B5AF-4EF0-8C44-E78A8E7DC2BE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{413702AE-B5AF-4EF0-8C44-E78A8E7DC2BE}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{948074A8-79F5-4D07-A9D3-292BD2B88D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948074A8-79F5-4D07-A9D3-292BD2B88D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948074A8-79F5-4D07-A9D3-292BD2B88D2A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{948074A8-79F5-4D07-A9D3-292BD2B88D2A}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
