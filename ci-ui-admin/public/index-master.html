@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html ng-app="admin">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cidade Interativa - Admin</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/datepicker3.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        
+
+        <!--Icons-->
+        <script src="js/external/lumino.glyphs.js"></script>
+
+        <!-- Angular -->
+        <script src="js/external/angular.min.js"></script>
+
+        <script src="js/internal/menu/menu.js"></script>
+        <script src="js/internal/app.js"></script>
+
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+	    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		    <div class="container-fluid">
+			    <div class="navbar-header">
+				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					    <span class="sr-only">Toggle navigation</span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+				    <a class="navbar-brand" href="#"><span>Cidade Interativa</span> 
+                        | <span class="perfil">Administração Geral</span>
+                    </a>
+				    <ul class="user-menu">
+					    <li class="dropdown pull-right">
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Robson F. Veiga <span class="caret"></span></a>
+						    <ul class="dropdown-menu" role="menu">
+							    <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							    <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							    <li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						    </ul>
+					    </li>
+				    </ul>
+			    </div>
+							
+		    </div><!-- /.container-fluid -->
+	    </nav>
+		
+	    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		    <div class="panel-heading">
+                Menu
+            </div>
+		    <ul class="nav menu" ng-controller="MenuController as menu">
+			    <li class="{{item.class}}" ng-repeat="item in menu.itens">
+                    <a  href="index.html">{{item.name}}</a>
+                </li>
+		    </ul>
+
+	    </div><!--/.sidebar-->
+		
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+	    <div class="row">
+		    <ol class="breadcrumb">
+			    <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+			    <li class="active">{{}}</li>
+		    </ol>
+	    </div><!--/.row-->
+		
+	    <div class="row">
+		    <div class="col-lg-12">
+			    <h1 class="page-header">Dashboard</h1>
+		    </div>
+	    </div><!--/.row-->
+
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                
+                
+                <div class="panel panel-blue panel-widget ">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <svg class="glyph stroked bag">
+                                <use xlink:href="#stroked-male-user"></use></svg>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">120</div>
+                            <div class="text-muted">Usuários</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-red panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <svg class="glyph stroked empty-message"><use xlink:href="#stroked-sound-on"></use></svg>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">52</div>
+                            <div class="text-muted">Denúncia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-orange panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">22</div>
+                            <div class="text-muted">Sem resposta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-teal panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <svg class="glyph stroked male-user"><use xlink:href="#stroked-home"></use></svg>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">24</div>
+                            <div class="text-muted">Prefeituras</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="panel panel-default chat">
+                        <div class="panel-heading" id="accordion"><svg class="glyph stroked two-messages"><use xlink:href="#stroked-two-messages"></use></svg>Ultimos 30 post's</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="right clearfix">
+                                    <span class="chat-img pull-right">
+                                        <img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="pull-left primary-font">Jane Doe</strong> <small class="text-muted">6 mins ago</small>
+                                        </div>
+                                        <p>
+                                            Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum sapien.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!--/.col-->
+
+            </div><!--/.row-->
+        </div>	<!--/.main-->
+
+	<script src="js/external/jquery-1.11.1.min.js"></script>
+	<script src="js/external/bootstrap.min.js"></script>
+	<script>
+		
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		    if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		    if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+    </body>
+
+</html>
